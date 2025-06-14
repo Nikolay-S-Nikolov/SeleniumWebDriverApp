@@ -1,5 +1,6 @@
 pipeline{
     agent any
+
     stages{
         stage("Build the project"){
             steps{
@@ -7,7 +8,7 @@ pipeline{
                 bat "dotnet build"
             }
             }
-        }
+        
         stage("Test the project"){
             steps{
                 echo "executing bat command dotnet test"
@@ -27,3 +28,4 @@ pipeline{
             echo "Build or test stage failed"
         }
     }
+}
