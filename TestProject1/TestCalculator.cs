@@ -20,7 +20,9 @@ namespace TestProject1
         [OneTimeSetUp]
         public void SetUp()
         {
-            driver = new ChromeDriver();
+            ChromeOptions options = new ChromeOptions();
+            options.AddArgument("headless"); // Run in headless mode
+            driver = new ChromeDriver(options);
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
             driver.Url = "https://calculatorhtml.onrender.com/";
 
